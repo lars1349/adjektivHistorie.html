@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3><div class="main">
+            <div>Velkommen til denne</div> <div id="getWord1">___</div>
+            <div>historien der du kan</div> <div id="getWord2">___</div>
+            <div>putte inn mange</div> <div id="getWord3">___</div>
+            <div>og</div> <div id="getWord4">___</div> <div> ord!</div>
+        </div></h3>
+
+    <button onclick="getWordLine1()">slimete</button>
+    <button onclick="getWordLine2()">humpete</button>
+    <button onclick="getWordLine3()">udugelige</button>
+    <button onclick="getWordLine4()">grønne</button><br/><br/>
+    <button onclick="getWordRandom1()">Random ord felt 1</button>
+    <button onclick="getWordRandom2()">Random ord felt 2</button>
+    <button onclick="getWordRandom3()">Random ord felt 3</button>
+    <button onclick="getWordRandom4()">Random ord felt 4</button>
+
+    <script>
+        let words = ["SLIMETE", "HUMPETE", "UDUGELIGE", "GRØNNE"];
+        function randomPlacing(){
+            let randomNum = Math.floor(Math.random() * 4+1 )
+            console.log(randomNum);
+            return randomNum
+        }
+
+        function getRandomWord(){
+        let random = Math.floor(Math.random() * words.length);
+        console.log(random, words[random]);
+        return random
+        }
+
+        function getWordLine1(insertWord){
+            document.getElementById("getWord"+randomPlacing()).innerHTML = words[0];
+        }
+        function getWordLine2(insertWord){
+            document.getElementById("getWord2").innerHTML = words[1];
+        }
+        function getWordLine3(insertWord){
+            document.getElementById("getWord3").innerHTML = words[2];
+        }
+        function getWordLine4(insertWord){
+            document.getElementById("getWord4").innerHTML = words[3];
+        }
+        function getWordRandom1(insertWord){
+            document.getElementById("getWord1").innerHTML = words[getRandomWord()];
+        }
+        function getWordRandom2(insertWord){
+            document.getElementById("getWord2").innerHTML = words[getRandomWord()];
+        }
+        function getWordRandom3(insertWord){
+            document.getElementById("getWord3").innerHTML = words[getRandomWord()];
+        }
+        function getWordRandom4(insertWord){
+            document.getElementById("getWord4").innerHTML = words[getRandomWord()];
+        }
+        
+    // <input type="text" onchange="changeWord(this.value)">
+        // Inneholder: this, onclick, variabler, innerHTML
+
+        // let numbers = [1, 2, 3, 4]
+        // let words = ["slimete", "humpete", "udugelige", "grønne"];
+        
+        // console.log(words);
+
+        /* let words = ["slimete", "humpete", "udugelige", "grønne"];
+        for (let i = 0; i < words.length; i+-){
+            console.log(words[i]);         
+        } */
+
+        /*    for (let i = 0; i < words.length; i++){}
+        let words2 = ["slimete", "humpete", "udugelige", "grønne"];
+            for (let i = 2; i < words.length; i++){
+   
+            console.log(words[i]);
+            }
+            */
+    </script>
+
+    <style>
+        .main{
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+        }
+    </style>
+
+</body>
+</html>
